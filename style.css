@@ -116,7 +116,7 @@ h2{
     text-align: center;
 }
 
-#safe-image-div img{ 
+#safe-image{ 
     width: 60%;
     padding: 8%;
     background-image: url('images/shape-3.png'), url('images/shape-3.png'), url('images/shape-3.png');
@@ -131,6 +131,8 @@ h2{
     color: white;
     text-align: center;
     padding: 30px;
+    border-radius: 0 0 20px 20px;
+    border-top: 5px solid red;
 }
 
 @media screen and (max-width: 1200px) {
@@ -146,7 +148,12 @@ h2{
   /* On screens that are 600px wide or less, the background color is olive */
   @media screen and (max-width: 900px) {
     body {
-      background-color: olive;
+      background-color: #11113d;
+      color: white;
+    }
+    .footer{
+        background-color: white;
+        color: #11113d;
     }
     .home-header, .stay-safe, .my-mission{
         display: grid;
@@ -163,5 +170,12 @@ h2{
         display: grid; 
         grid-template-areas: 'menu' 'right';
         margin-top: 80px;
+    }
+    .image-center-div{ 
+        text-align: center;
+    }
+    img{
+        width: 80%;
+        text-align: center;
     }
   }
