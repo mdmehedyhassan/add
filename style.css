@@ -4,10 +4,6 @@ body{
     padding: 20px;
     font-family: 'Roboto', sans-serif;
 }
-.half-width div{
-    background-color: #fff;
-    margin-left: 3px solid red;
-}
 
 img{
     width: 100%;
@@ -15,7 +11,7 @@ img{
 
 button{
     border: 0;
-    background-color: tomato;
+    background-image: linear-gradient(45deg, tomato, #ff7d7d);
     font-size: 1.3em;
     font-weight: bold;
     color: white;
@@ -54,11 +50,13 @@ h2{
 .image-div-small{ grid-area: right;}
 .develop-div{
     display: grid; 
-    grid-template-areas: 'right menu menu ';
+    grid-template-areas: 'right right menu menu menu ';
+    margin-top: 90px;
 }
 .global-community{
     display: grid; 
-    grid-template-areas: ' menu menu right';
+    grid-template-areas: ' menu menu menu right right';
+    margin-top: 80px;
 }
 
 .home-header div, .develop-div div, .global-community div, .stay-safe div, .my-mission div{
@@ -93,25 +91,39 @@ h2{
     background-color: #f0f0b3af;
 }
 
-#background-global{
+#background-develop div img{
     background-image: url('images/shape-1.png');
-    background-size: 13%;
-    background-repeat: no-repeat;
-    background-position: bottom right;
-    margin: 0;
-    padding: 35px;
-}
-#background-develop{
-    background-image: url('images/shape-1.png');
-    background-size: 13%;
+    background-size: 45%;
     background-repeat: no-repeat;
     background-position: center left;
     margin: 0 ;
-    padding: 45px;
+    padding-left: 20%;
+}
+#background-develop .text-large-div{ 
+    padding-left: 70px;
 }
 
-#stay-safe-text{
-    margin-top: 30%;
+#background-global .image-div-small img{
+    background-image: url('images/shape-1.png');
+    background-size: 35%;
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    margin: 0;
+    padding: 0 15% 15% 0;
+}
+
+#safe-image-div{ 
+    text-align: center;
+}
+
+#safe-image-div img{ 
+    width: 60%;
+    padding: 8%;
+    background-image: url('images/shape-3.png'), url('images/shape-3.png'), url('images/shape-3.png');
+    background-size: 20%, 20%, 40%;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position-x: 90% , 10%, 0;
+    background-position-y: 70%, 90%, 0;
 }
 
 .footer{
@@ -120,3 +132,36 @@ h2{
     text-align: center;
     padding: 30px;
 }
+
+@media screen and (max-width: 1200px) {
+    body {
+        width: 100%;
+    }
+    .my-mission{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+  }
+  
+  /* On screens that are 600px wide or less, the background color is olive */
+  @media screen and (max-width: 900px) {
+    body {
+      background-color: olive;
+    }
+    .home-header, .stay-safe, .my-mission{
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .text-large-div{ grid-area: menu;}
+    .image-div-small{ grid-area: right;}
+    .develop-div{
+        display: grid; 
+        grid-template-areas: 'right' ' menu' ;
+        margin-top: 90px;
+    }
+    .global-community{
+        display: grid; 
+        grid-template-areas: 'menu' 'right';
+        margin-top: 80px;
+    }
+  }
